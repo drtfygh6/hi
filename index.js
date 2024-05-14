@@ -1,3 +1,7 @@
-const originalObject = { name: "Alice", age: 30 };
-const clonedObject = JSON.parse(JSON.stringify(originalObject));
-console.log(clonedObject); // { name: "Alice", age: 30 }
+function canJump(nums) {
+  let lastPos = nums.length - 1;
+  for (let i = nums.length - 2; i >= 0; i--) {
+    if (i + nums[i] >= lastPos) lastPos = i;
+  }
+  return lastPos === 0;
+}
